@@ -1,0 +1,136 @@
+// =============================================================================
+
+// Inizio sito
+
+@mixin gradient($direction, $fromColor, $endColor) {
+  background: $fromColor;
+  background: linear-gradient($direction, $fromColor, $endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{$fromColor}",endColorstr="#{$endColor}",GradientType=1);
+}
+
+@mixin social-hover($bg, $color) {
+  background: $bg;
+  color: $color;
+  transform: translateY(-15px);
+  border-color: $bg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =============================================================================
+
+// Fine sito
+
+
+// 1 modo
+// @mixin font {
+//   font-size: 20px;
+//   color: blue;
+//   font-weight: lighter;
+//   font-family: 'Times', sans-serif;
+// }
+
+// 2 modo
+// @mixin font($size, $fontWeight, $color) {
+//   font-size: $size;
+//   color: $color;
+//   font-weight: $fontWeight;
+//   font-family: 'Times', sans-serif;
+// }
+//
+// @mixin padd($bg, $padd...) {
+//   background-color: $bg;
+//   padding: $padd;
+// }
+
+// 3 modo
+// @mixin font($size: 20px, $fontWeight: bold, $color: blue)
+
+
+// 1 modo
+// @mixin links($main-color, $hover, $active) {
+//   a {
+//     text-decoration: none;
+//     color: $main-color;
+//
+//     &:hover {color: $hover}
+//     &:active {color: $active}
+//   }
+// }
+//==========================================
+
+// 2 modo
+// @mixin links($main-color) {
+//   a {
+//     text-decoration: none;
+//     color: $main-color;
+//
+//     &:hover {color: darken($main-color, 10%)}
+//     &:active {color: darken($main-color, 30%)}
+//
+//     @content; // Content
+//   }
+// }
+
+// Condizioni, cicli & @content
+
+// Condizioni
+// @mixin blocks($blocks) {
+//   height: 200px;
+//   background-color: #333;
+//   float: left;
+//
+//   @if($blocks > 5) {
+//     width: (100% - 8%);
+//     padding: 2%;
+//     margin: 2%;
+//   }
+//
+//   @elseif($blocks == 5) {
+//     width: 50px;
+//     padding: 20px;
+//     margin: 20px;
+//   }
+//
+//   @elseif($blocks == 4) {
+//     width: 150px;
+//     padding: 20px;
+//     margin: 20px;
+//   }
+//
+//   @elseif($blocks == 3) {
+//     width: 10px;
+//     padding: 20px;
+//     margin: 20px;
+//   }
+//
+//   @else {
+//     width: 200px;
+//     padding: 20px;
+//     margin: 20px;
+//   }
+// }

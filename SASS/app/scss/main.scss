@@ -1,0 +1,401 @@
+// =============================================================================
+
+// Inizio sito
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+@import "mixins";
+@import "vars";
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+html, body {height: 100%;}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.wrapper {
+  width: 100%;
+  @include gradient(45deg, #b08a90, #b9d8e4);
+  min-height: 100%;
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+
+.block {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px 0;
+
+  .img-holder {
+    @include gradient(90deg, #b3aab9, #bad2df);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 23px;
+    color: $main-text-color;
+  }
+
+  p {
+    color: darken($main-text-color, 10%);
+    margin-top: 20px;
+  }
+
+  .social {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 50px;
+
+     div {
+      border: 1px solid $social-color;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      color: $social-color;
+      transition: all 1s ease;
+
+      &.twitter {
+        &:hover {
+          @include social-hover(#48c7ea, #fff);
+        }
+      }
+
+      &.fb {
+        &:hover {
+          @include social-hover(#3b4999, #fff);
+        }
+      }
+
+      &.yt {
+        &:hover {
+          @include social-hover(#ff0000, #fff);
+        }
+      }
+    }
+  }
+}
+
+.bottom-text {
+  text-align: center;
+  color: #c8c2c8;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =============================================================================
+
+// Fine sito
+
+// @import "vars";
+// @import "extends";
+// @import "mixins";
+
+// 1) Variabili
+// $main-text-color: #fff;
+// $main-bg-color: #ccc;
+// $font-family: 'Times New Roman';
+//
+// body {
+//   background: $main-bg-color;
+//   padding: 20px;
+// }
+//
+// p.txt {
+//   color: $main-text-color;
+//   font-family: $font-family, sans-serif;
+// }
+//
+// span.text {
+//   color: $main-text-color;
+//   font-weight: bold;
+//   font-family: $font-family, serif;
+// }
+
+// 2) Nidificazione + 3) Frammentazione e importazione --> creare un file apparte dove mettere le var es:"_vars.scss", è più comodo se si aggiunge "_"
+// $color-text: blue;
+//
+// .block, .block-2 {
+//   padding: 20px;
+//   background: red;
+// }
+//
+// .block {
+//   margin-bottom: 20px;
+//   > p {
+//     color: #fff;
+//
+//     > a {
+//       color: black;
+//
+//       &:hover {
+//         text-decoration: line-through;
+//       }
+//     }
+//
+//     &::first-letter {
+//       color: $color-text;
+//     }
+//   }
+//
+//   &:hover {
+//     background: green;
+//   }
+//
+//   &::after {
+//     content: 'Hi';
+//   }
+// }
+//
+// .block-2 {
+//   a {
+//     color: #fff;
+//   }
+// }
+//
+// a {
+//   color: #000;
+//   text-decoration: none;
+// }
+
+// 4) Estensioni ed eredità --> si crea un file apparta es: "_extends.scss" e poi si scrive "@extend + % + nomeClasse" alla nostra classe
+// .block {
+//   @extend %block;
+//
+//   margin-bottom: 20px;
+//   > p {
+//     color: #fff;
+//
+//     > a {
+//       color: black;
+//
+//       &:hover {
+//         text-decoration: line-through;
+//       }
+//     }
+//
+//     &::first-letter {
+//       color: $color-text;
+//     }
+//   }
+//
+//   &:hover {
+//     background: green;
+//   }
+//
+//   &::after {
+//     content: 'Hi';
+//   }
+// }
+//
+// .block-2 {
+//   @extend %block;
+//
+//   a {
+//     color: #fff;
+//   }
+// }
+//
+// a {
+//   color: #000;
+//   text-decoration: none;
+// }
+//
+// .btn-red {
+//   @extend %btn;
+//   background-color: red;
+// }
+//
+// .btn-green {
+//   @extend %btn;
+//   background-color: green;
+// }
+
+// 5) Mixins --> creare file es: "_mixind.scss" collegarlo + @include "nomeStile" ...
+// .block {
+//   @extend %block;
+//
+//   margin-bottom: 20px;
+//   > p {
+//     color: #fff;
+//
+//     > a {
+//       @include font(20px, bold, black);
+//
+//       &:hover {
+//         text-decoration: line-through;
+//       }
+//     }
+//
+//     &::first-letter {
+//       color: $color-text;
+//     }
+//   }
+//
+//   &:hover {
+//     background: green;
+//   }
+//
+//   &::after {
+//     content: 'Hi';
+//   }
+// }
+//
+// .block-2 {
+//   @extend %block;
+//   @include padd(#fcfcfc, 20px, 30px, 40px, 50px);
+//
+//   a {
+//     @include font(14px, bold, #fff);
+//   }
+// }
+//
+// a {
+//   color: #000;
+//   text-decoration: none;
+// }
+//
+// .btn-red {
+//   @extend %btn;
+//   1 modo
+//   @include font(24px, light, #fff);
+//   2 modo
+//   @include font($color: #fff, $size: 24px, $fontWeight: light);
+//   background-color: red;
+// }
+//
+// .btn-green {
+//   @extend %btn;
+//   background-color: green;
+// }
+
+// 6) Funzioni di SASS --> si possono trovare sul sito ufficiale
+// .block {
+//   @extend %block;
+//
+//   width: (50px / 5 - 10px);
+//
+//
+//   margin-bottom: 20px;
+//   > p {
+//     color: #fff;
+//
+//     > a {
+//       @include font(20px, bold, black);
+//
+//       &:hover {
+//         text-decoration: line-through;
+//       }
+//     }
+//
+//     &::first-letter {
+//       color: $color-text;
+//     }
+//   }
+//
+//   &:hover {
+//     background: green;
+//   }
+//
+//   &::after {
+//     content: 'Hi';
+//   }
+// }
+//
+// .block-2 {
+//   @extend %block;
+//   @include padd(#fcfcfc, 20px, 30px, 40px, 50px);
+//
+//   // 1 modo
+//   // @include links(#fff, blue, #000);
+//
+//   // 2 modo
+//   @include links(#fff) {
+//   background: #333;
+//
+//   b {
+//     color: red;
+//   }
+//
+//     &:visided {color: green}
+//   }
+// }
+//
+// // 1 modo
+// @include links(#000, red, green);
+//
+// // 2 modo
+// @include links(red);
+//
+// .btn-red {
+//   @extend %btn;
+//   @include font(24px, light, #fff);
+//   background-color: red;
+// }
+//
+// .btn-green {
+//   @extend %btn;
+//   background-color: green;
+// }
+//
+//
+//
+// // Condizioni, cicli & @content
+// #main-block {
+//   float: left;
+//   width: 100%;
+//   margin-top: 20px;
+//
+//   > div {
+//     @include blocks(5);
+//   }
+// }
+//
+// @for $el from 4 to 9 {
+//   .#{$some-class}-#{$el} {
+//     padding: (20px + $el) * 2;
+//   }
+// }  // Ciclo
