@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Selettori</title>
+</head>
+<body>
+
+  <div id="block">Test</div>
+  <div style="background: red; padding: 10px;"></div>
+  <p class="txt">1</p>
+  <p class="txt">2</p>
+  <span class="txt">
+    <div class="block">
+      Lorem ipsum dolor.
+    </div>
+  </span>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  ;(function($, undefined) {
+    $(".block").prev().hide();
+  })(jQuery);
+
+  // Tipi di selettori
+  // $("").next().hide();
+  // $("").prev().hide();
+
+  // $("").parent().hide();
+  // $("").children().hide();
+
+  // $("").firs().hide();
+  // $("").last().hide();
+
+  // $("").hide(); --> nasconde
+  // $("").show(); --> mostra
+  </script>
+
+</body>
+</html>

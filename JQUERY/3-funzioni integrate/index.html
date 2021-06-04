@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Funzioni</title>
+</head>
+<body>
+
+  <div id="block">Test</div>
+  <p class="txt">1</p>
+  <p class="txt">2</p>
+  <span class="txt">
+    <div class="block"> <!-- <-- style="display: none" -->
+      Lorem ipsum dolor.
+    </div>
+  </span>
+  <input type="text" name="" value="Some">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    ;(function($, undefined) {
+      // 1)
+      // $("#block").css("background", "silver");
+      // $("#block").css("padding", "10px");
+      // $("#block").css({
+      //   "width": "100px",
+      //   "height": "100px",
+      //   "border-radius": "5px"
+      // });
+      // var padding =  $("#block").css("padding");
+      // alert(padding);
+      // =======================================================================
+
+      // 2)
+      // $("#block").addClass("test main");
+      // $("#block").removeClass("main");
+      // var isClass = $("#block").hasClass("test"); --> hasClass fa capire se c'è la classe che abbiamo scritto es. "test"
+      // alert(isClass);                             --> se la classe esiste = "true" se la classe è inesistente = "false"
+      // =======================================================================
+
+      // 3)
+      // $("div.block").attr({ --> aggiunge un attributo es. "id"
+      //   "id": "newOne"
+      // });
+      // $("div.block").removeAttr("id"); --> rimuove un attributo es "id"
+      // =======================================================================
+
+      // 4)
+      // $("input").prop("disabled", true);
+      // alert($("input").prop("disabled"));
+      // =======================================================================
+
+      // 5)
+      // Animazioni
+      // $("p").fadeOut("fast");
+      // $("div.block").fadeIn("slow");
+      // $("div.block").slideDown("fast");
+      // $("p").slideUp("slow");
+
+
+      // $("p").toggle(); --> se un oggetto è chiuso lo apre, se è aperto lo chiude
+      // =======================================================================
+
+      // 6)
+      // $("span.txt").remove(); --> rimuove l'elemento
+      // $("span.txt").empty(); --> rimuove tutto dall'elemento
+      // $("span.txt").html("<b>Hi</b>");
+      // alert($("span.txt").html());
+      // alert($(".block").text());
+      // =======================================================================
+
+      // 7)
+      // $("#block").animate({
+      //   "width": $("#block").width() + 300, --> la larghezza che ha già + la larghezza he gli dai tu es. " + 300"
+      //   "height": "100px",
+      //   "border-radius": "50px"
+      // }, 3000); --> è la durata dell'animazione
+      // $("#block").animate({
+
+      //   "width": "200px", --> dai tu l'altezza e la larhezza
+      //   "height": "100px" --> dai tu l'altezza e la larhezza
+      // });
+      // =======================================================================
+
+      // 8)
+      // $("#block").before($("<h3>Test</h3>"));
+      // $("<h3>Test</h3>").insertBefore($("#block")); --> before & insertBefore fanno la stessa cosa
+
+      // $("#block").after($("<h3>Test</h3>"));
+      // $("<h3>Test</h3>").insertAfter($("#block")); --> after & insertAfter fanno la stessa cosa
+      // $("#block").after($("span.txt"));
+      // =======================================================================
+
+      // 9)
+      // $("#block").replaceWith("<h3>Test</h3>"); --> sostituisce un elemento
+      // $("#block").prepend("<h3>Test</h3>"); --> aggiunge quello che scriviamo all'inizione dell'elemento
+      // $("#block").append("<h3>Test</h3>"); --> aggiunge quello che scriviamo alla fine dell'elemento
+    })(jQuery);
+  </script>
+</body>
+</html>
